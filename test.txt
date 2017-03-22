@@ -1,1 +1,34 @@
-hello world! How are you?
+Generally these elemeents will be in a online marketplace ,these are the few things to consider while designing/developing  a home page.
+
+Search Bar
+Navigation Menu Bar
+Banner Image
+Promotions
+Highlighted Products
+Product Carousel
+Clients or testimoniels
+Footer
+1
+
+Product Listing Page
+
+Filters
+Product Grid
+Navigation Menu
+Search Bar
+2
+
+Product Description Page
+
+Product Description like image, name, price, quantity etc
+Recommended Product List
+Cart
+
+Checkout Page
+
+Payment Page
+
+All these layouts can be designed here in OCC
+
+Design->Layouts->Grid View->Components->Select widgets  to add.
+
