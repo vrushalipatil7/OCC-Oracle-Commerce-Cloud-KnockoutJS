@@ -1,0 +1,10 @@
+{
+"resources": {
+"blockWidget": "block Widget",
+"searchError": "An error occurred during search",
+"searchLabel": "Search",
+"searchButton": "Go!",
+"searchResultsTitle": "Found __numResults__ Results",
+"creatine":"بناء العضلات"
+}
+}

@@ -1,0 +1,15 @@
+{
+  "availableToAllPages": true,
+  "config": {},
+  "global": false,
+  "globalEnabled": true,
+  "i18nresources": "slickWidget",
+  "imports": [],
+  "javascript": "slickWidget",
+  "jsEditable": true,
+  "minWidth": 1,
+  "name": "slick test",
+  "version": 1,
+  "widgetFamily": "slickWidget",
+  "widgetType": "slickWidget"
+}

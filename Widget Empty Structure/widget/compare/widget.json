@@ -1,0 +1,7 @@
+{
+"name": "Custom first Widget",
+"availableToAllPages": true,
+"javascript": "compareFirst",
+"jsEditable": true,
+"i18nresources": "compareFirst"
+}

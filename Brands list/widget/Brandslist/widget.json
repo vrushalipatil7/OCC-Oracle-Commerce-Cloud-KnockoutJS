@@ -1,0 +1,15 @@
+{
+"name": "Custom Brands List",
+"availableToAllPages": true,
+"javascript": "Brandslist",
+"jsEditable": true,
+"i18nresources": "Brandslist",
+"config": {},
+"global": false,
+"globalEnabled": true,
+"imports": [],
+"minWidth": 1,
+"version": 1,
+"widgetFamily": "brandslistWidget",
+"widgetType": "brandslistWidget"
+}
