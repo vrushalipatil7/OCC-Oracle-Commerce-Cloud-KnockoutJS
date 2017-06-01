@@ -1,0 +1,36 @@
+<div class="blogPostWrapper">
+    <p class="h4 text-center">OUR BLOG POST</p>
+    <div class="row">
+        <!--ko foreach: blogResults() -->
+        <div class="col-sm-6 postWrapper">
+            <div class="row ">
+                <div class="col-sm-12 col--no-gutters blogPostImg">
+                    <!--<a data-bind="click: $parent.handleBlogClick"><img class="" data-bind="attr: { src: $data.featured_image}"/></a>-->
+                    <img class="" data-bind="attr: { src: $data.featured_image}"/>
+                    <div class="blogPostDate"><i class="fa fa-calendar" aria-hidden="true"></i><span data-bind="text: $data.dateString"></span></div>
+                </div>
+                <div class="col-sm-12 blogPostTitle">
+                    <p class="blogPostHeading" data-bind="html: $data.title"></p>
+                    <div data-bind="html: $data.excerpt"></div>
+                    <p><a target="_blank" data-bind="attr: { href : $data.URL}">Read More</a></p>
+                </div>
+            </div>
+        </div>
+        <!--/ko-->
+    </div>
+</div>
+<div id="blogModel" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+    </div>
+    <div class="modal-body">
+        <div class="" data-bind="html: blogActive().content"></div>
+    </div>
+</div>
+</div>
+</div>

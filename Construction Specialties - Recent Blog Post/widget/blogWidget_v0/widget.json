@@ -1,0 +1,16 @@
+{
+  "availableToAllPages": true,
+  "config": {},
+  "global": false,
+  "globalEnabled": true,
+  "i18nresources": "Wpblog",
+  "imports": [],
+  "javascript": "Wpblog",
+  "jsEditable": true,
+  "minWidth": 1,
+  "name": "Construction Specialties - Recent Blog Post",
+  "source": 101,
+  "version": 0,
+  "widgetFamily": "blogWidget",
+  "widgetType": "blogWidget"
+}
