@@ -1,0 +1,66 @@
+define(   // DEPENDENCIES   
+	['jquery','knockout', 'ccConstants', 'ccRestClient', 'notifier'], 
+   // MODULE DEFINITION   
+   	function ($,ko, CCConstants, CCRestClient, notifier) {    
+    "use strict";     
+    return {       
+    	MAX_COMPARE: 4,       
+    	OFFSET: 0, 
+       	//searchTerm: ko.observable(""),      
+        compareProductIDs: ko.observableArray([]),
+       	compareResults: ko.observableArray([]), 
+
+       	onLoad: function(widget) {   }, 
+ 
+  		beforeAppear: function(page) {    
+  			//this.searchTerm("");     
+  			this.compareProductIDs.removeAll(); 
+        this.compareResults.removeAll();   
+  		},
+  		 addToCompare: function(widget, event) {     
+  		 	var keyCode;    
+        console.log(keyCode); 
+  		 	keyCode = (event.which ? event.which : event.keyCode);     
+  		 	if(keyCode === CCConstants.KEY_CODE_ENTER) {       
+	  		 	// Enter key       
+	  		 	widget.searchHandler(widget, event);       
+	  		 	return false;     
+  		 	}     
+		 	return true;   
+  		},
+  		searchHandler: function(widget, event) {     
+  			/*widget.searchResults.removeAll();     
+  			if (widget.searchTerm() && widget.searchTerm().length > 0) {       
+  				var data = {};       
+  				data[CCConstants.SEARCH_TERM_KEY] = CCConstants.PRODUCT_DISPLAYABLE + CCConstants.SEARCH_PROPERTY_SEPARATOR +        
+  				widget.searchTerm();       
+  				data[CCConstants.SEARCH_NAV_EREC_SEARCHES_KEY] = CCConstants.PRODUCT_DISPLAYABLE_PROPERTY;
+  				data[CCConstants.SEARCH_NAV_ERECS_OFFSET] = widget.OFFSET;       
+  				data[CCConstants.SEARCH_REC_PER_PAGE_KEY] = widget.MAX_RESULTS;       
+  				data[CCConstants.VISITOR_ID] =  localStorage.getItem(CCConstants.VISITOR_ID);       
+  				data[CCConstants.VISIT_ID] = localStorage.getItem(CCConstants.VISIT_ID);       
+  				data[CCConstants.SEARCH_LANGUAGE] = widget.locale();       
+  				data[CCConstants.SEARCH_TYPE] = CCConstants.SEARCH_TYPE_SIMPLE;
+  				// perform search       
+  				CCRestClient.request(CCConstants.ENDPOINT_SEARCH_SEARCH, data,  widget.successCallback.bind(widget), 
+  				widget.errorCallback.bind(widget),null);     
+  			}   */
+  		}, 
+  		successCallback: function(result) {     
+	  		if((result.resultsList) && (result.resultsList.records)) {       
+	  			var results = result.resultsList.records;       
+	  			for(var i=0; i<results.length; i++ ) {         
+	  				if(results[i].records && results[i].records[0] && results[i].records[0].attributes) { 
+	  				    this.searchResults.push(results[i].records[0].attributes);           
+	  				}         
+	  			}       
+	  		}     
+  		},
+  		errorCallback: function(data) {     
+  			// Widget Type, Error Message, Scroll to Error     
+  			notifier.sendWarning(this.typeId(), this.translate('searchError'),       true);   
+  		} 
+ 
+  	};  
+} );
+ 

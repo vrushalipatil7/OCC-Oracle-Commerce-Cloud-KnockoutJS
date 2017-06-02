@@ -1,0 +1,183 @@
+<div class="compare-to-product">
+    <div class="row" data-bind="foreach: compareResults()">
+        <div class="col-lg-4">
+            <img class="img-responsive" data-bind="attr: { src: $data.primaryFullImageURL}">
+        </div>
+        <div class="col-lg-8">
+            <p data-bind="text: $data.displayName"></p>
+            <p><span>product ID :</span><span data-bind="text: $data.id"></span>
+            </p>
+            <p data-bind="text: $data.listPrice"></p>
+            <a data-bind="click: $parent.removeHandler">Remove</a>
+        </div>
+    </div>
+    <!--<div class="row">
+        <div class="col-lg-6">
+            <img src="/file/general/16. New Arrivals Product - 7.png">
+        </div>
+        <div class="col-lg-6">
+            <h6>
+                Blue Hobo bag
+            </h6>
+            <span>$120.50</span>
+            <span>Remove</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <img src="/file/general/16. New Arrivals Product - 7.png">
+        </div>
+        <div class="col-lg-6">
+            <h6>
+                Off-White Frame Bag
+            </h6>
+            <span>$200.99</span>
+            <span>Remove</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <img src="/file/general/16. New Arrivals Product - 7.png">
+        </div>
+        <div class="col-lg-6">
+            <h6>
+                Add Product
+            </h6>
+        </div>
+    </div>-->
+    <div class="row">
+        <p>4 Products can be <span>Compared</span> at once</p>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#compareModalECH">COMPARE</button>
+    </div>
+</div>
+    <div class="comparison">
+        <span>COMPARE</span>
+        <span data-bind="text: compareResults().length"></span>
+    </div>
+<!--Compare modal-->    
+<div id="compareModalECH" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+          <!-- ko if: compareResults().length -->
+            <div class="container compare-product">
+              <div class="row">
+                <div class="col-xs-12">
+                  <table class="table table-hover tablesaw tablesaw-stack" data-tablesaw-mode="stack">
+            
+                    <tbody>
+                        <tr>
+                           <td></td>
+                           <!-- ko foreach: compareResults() -->
+                           <td>
+                                <div><span data-bind="text: $data.displayName"></span><span><a data-bind="click: $parent.removeHandler">Remove</a></span></div>    
+                                <div class="product-image">
+                                    <a href=""><img class="img-responsive" data-bind="attr: { src: $data.primaryFullImageURL}"></a></div>
+                                <div class="row">
+                                    <button class="col-lg-8">ADD TO CART</button> <button class="col-lg-2">
+                                        <span><!--<img src="/file/general/Header Icon - Wishlist.png" class="img-responsive">--></span>
+                                    </button>
+                                </div>
+                            </td>
+                             <!-- /ko -->
+                        </tr>
+                      
+                        <tr>
+                            <td>Price</td>
+                            <!-- ko foreach: compareResults() -->
+                            <td><span data-bind="text: $data.displayName"></span></td>
+                            <!--/ko-->
+                        </tr>
+                      <tr>
+                        <td>Other Colors</td>
+                            <!-- ko foreach: compareResults() -->
+                            <td>--</td>
+                		    <!--/ko-->
+                      </tr>
+                      <tr>
+                        <!--<td>Size</td>
+                        <td>One - Size</td>
+                        <td><select><option selected>Select Size </option></select></td>
+                        <td>--</td>
+                        <td>One - Size</td>-->
+                        <td>Size</td>
+                        <!-- ko foreach: compareResults() -->
+                            <td>--</td>
+                		<!--/ko-->
+                      </tr>
+                      <tr>
+                        <td>Description</td>
+                        <!-- ko foreach: compareResults() -->
+                        <td><div data-bind="if: $data.description"><p data-bind="text: $data.description">Lorem ipsum dolor sit amet,consectetuer adipiscing elit. Aenean commodo ligula...</p>
+                            <span>More</span>
+                            </div>
+                            <div data-bind="ifnot: $data.description"><p></p>
+                            </div>
+                        </td>
+                        <!--/ko-->
+                      </tr>
+                      <tr>
+                        <td>Availability</td>
+                        <!--<td>In Stock.</td>-->
+                        <!-- ko foreach: compareResults() -->
+                            <td>
+                            <!-- ko if: $data.childSKUs -->
+                            <p>In Stock</p>
+                            <!--/ko-->
+                            </td>
+                		<!--/ko-->
+                      </tr>
+                      <tr>
+                        <!--<td>Reviews</td>
+                        <td><p>Lorem Ipsum is simply dummy text
+                            of the printing and typesetting
+                            industry. Lorem Ipsum has been
+                            the industry's standard dummy
+                            text ever since the 1500s
+                            </p>
+                            <p>View all 200 reviews</p>
+                            <div><button>VIEW DETAILS</button></div>
+                        </td>-->
+                        <td>Reviews</td>
+                        <!-- ko foreach: compareResults() -->
+                            <td>--</td>
+                		<!--/ko-->
+                        
+                      </tr>
+                      <tr>
+                          <td></td>
+                          <!-- ko foreach: compareResults() -->
+                         <td>
+                            <a class="btn btm-primary" data-bind="attr: { href: $data.route}" >VIEW DETAILS</a>
+                        </td>
+                         <!--/ko-->
+                      </tr>
+                      
+                      
+                    </tbody>
+                  </table>
+                  <div class="label" data-bind="widgetLocaleText: 'name'"></div>
+                    <!-- ko foreach: compareResults -->
+                    <h1 class="CC-prodCompTitle" data-bind="text: $data.fuelType"></h1>
+                    <!-- /ko -->
+                </div>
+              </div>
+              <div class="col-lg-12 addAllCart">
+                   <span class="backto">BACK TO PREVIOUS PAGE</span> <button>ADD ALL TO CART</button> <span>Clear List</span>
+              </div>
+            </div>
+            <!--/ko-->
+            <!-- ko ifnot: compareResults().length -->
+                <p>Compare Product list is empty</p>
+            <!--/ko-->
+      </div>
+    </div>
+
+  </div>
+</div>

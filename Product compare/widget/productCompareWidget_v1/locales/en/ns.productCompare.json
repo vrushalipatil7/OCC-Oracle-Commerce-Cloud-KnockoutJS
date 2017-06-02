@@ -1,0 +1,9 @@
+{   
+	"resources": {  
+		"compareWidget": "compare Widget",  
+		"compareError": "An error occurred during compare",  
+		"compareLabel": "compare",  
+		"compareAll": "CompareAll",  
+		"compareResultsTitle": "Found __numResults__ Results"   
+	} 
+} 

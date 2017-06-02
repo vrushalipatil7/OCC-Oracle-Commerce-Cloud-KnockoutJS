@@ -1,0 +1,16 @@
+{
+  "availableToAllPages": true,
+  "config": {},
+  "global": false,
+  "globalEnabled": true,
+  "i18nresources": "productCompare",
+  "imports": [],
+  "javascript": "productCompareJs",
+  "jsEditable": true,
+  "minWidth": 1,
+  "name": "Product compare",
+  "source": 101,
+  "version": 1,
+  "widgetFamily": "productCompareWidget",
+  "widgetType": "productCompareWidget"
+}
